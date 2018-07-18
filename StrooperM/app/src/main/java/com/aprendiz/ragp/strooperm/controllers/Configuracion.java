@@ -1,5 +1,6 @@
 package com.aprendiz.ragp.strooperm.controllers;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,11 +34,11 @@ public class Configuracion extends AppCompatActivity {
     private void inputData() {
         modo= juegoc.getInt("modo",1);
         if (modo==1){
-            rbtnTiempo.setSelected(true);
+            rbtnTiempo.setChecked(true);
         }
 
         if (modo==2){
-            rbtnIntentos.setSelected(true);
+            rbtnIntentos.setChecked(true);
         }
 
         tiempo = juegoc.getInt("tiempo",3);
@@ -62,7 +63,13 @@ public class Configuracion extends AppCompatActivity {
         SharedPreferences.Editor editor = juegoc.edit();
         if (tmp.length()>0){
             try {
-                editor.putInt("tiempo", Integer.parseInt(tmp));
+                if (Integer.parseInt(tmp)<11 && Integer.parseInt(tmp)>0) {
+                    editor.putInt("tiempo", Integer.parseInt(tmp));
+                }else {
+                    Toast.makeText(Configuracion.this, "No se guardará el tiempo de la palabra." +
+                            " \n Por favor que este sea menor a 11 y mayor a 1", Toast.LENGTH_SHORT).show();
+                }
+
             }catch (Exception e){
                 Toast.makeText(Configuracion.this, "Por favor ingrese solo número", Toast.LENGTH_SHORT).show();
             }
@@ -76,9 +83,18 @@ public class Configuracion extends AppCompatActivity {
             editor.putInt("modo",1);
         }
 
-        if (rbtnTiempo.isChecked()){
-            editor.putInt("tiempo",1);
+        if (rbtnIntentos.isChecked()){
+            editor.putInt("modo",2);
+
         }
+
+        editor.commit();
+
+        Intent intent = new Intent(Configuracion.this, JuegoC.class );
+        startActivity(intent);
+        finish();
+
+
     }
 }
 

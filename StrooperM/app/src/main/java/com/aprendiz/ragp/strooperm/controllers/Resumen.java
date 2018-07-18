@@ -63,13 +63,13 @@ public class Resumen extends AppCompatActivity {
         if (MenuJ.guardar==1){
             txtCorrectas.setText(Integer.toString(Juego.correctas));
             txtIncorrectas.setText(Integer.toString(Juego.incorrectas));
-            txtAciertos.setText(Integer.toString(Juego.aciertos));
+            txtAciertos.setText(Integer.toString(Juego.aciertos)+"%");
             inputInDataBase();
 
         }else {
             txtCorrectas.setText(Integer.toString(JuegoC.correctas));
             txtIncorrectas.setText(Integer.toString(JuegoC.incorrectas));
-            txtAciertos.setText(Integer.toString(JuegoC.aciertos));
+            txtAciertos.setText(Integer.toString(JuegoC.aciertos)+"%");
         }
 
     }
@@ -77,7 +77,7 @@ public class Resumen extends AppCompatActivity {
     //Método para el llamado del método inputData de la Clase GestorDB
     private void inputInDataBase() {
         Score score = new Score();
-        score.setPuntuacion(Integer.toString(Juego.intentos));
+        score.setPuntuacion(Integer.toString(Juego.aciertos));
         score.setIncorrectas(Integer.toString(Juego.incorrectas));
         GestorDB gestorDB = new GestorDB(this);
         gestorDB.inputData(score);

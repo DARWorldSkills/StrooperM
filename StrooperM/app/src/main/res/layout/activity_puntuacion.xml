@@ -3,24 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/fondo"
     android:layout_height="match_parent"
     tools:context=".controllers.Puntuacion">
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="157dp"
+        android:layout_height="117dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="338dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/contenedor"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,13 +42,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:gravity="center" />
+                android:gravity="center"
+                android:src="@drawable/oro"/>
 
             <TextView
                 android:id="@+id/txtPrimero"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textColor="@color/letra"
                 android:gravity="center"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -63,12 +67,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:src="@drawable/plata"
                 android:gravity="center" />
 
             <TextView
                 android:id="@+id/txtSegundo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="@color/letra"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="24sp" />
@@ -87,12 +93,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:src="@drawable/bronce"
                 android:gravity="center" />
 
             <TextView
                 android:id="@+id/txtTercero"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="@color/letra"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="24sp" />
@@ -111,12 +119,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:src="@drawable/cuarto"
                 android:gravity="center" />
 
             <TextView
                 android:id="@+id/txtCuarto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="@color/letra"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="24sp" />
@@ -133,12 +143,14 @@
 
             <ImageView
                 android:layout_width="match_parent"
+                android:src="@drawable/casa"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:gravity="center" />
 
             <TextView
                 android:layout_width="match_parent"
+                android:textColor="@color/letra"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"

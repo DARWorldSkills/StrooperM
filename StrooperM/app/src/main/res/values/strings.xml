@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">StrooperM</string>
+    <string name="jugar">Jugar</string>
+    <string name="puntuacion">Puntuación</string>
+    <string name="configuracion">Configuración</string>
+    <string name="aciertos">Aciertos</string>
+    <string name="incorrectas">Incorrectas</string>
+    <string name="tiempo">Tiempo</string>
+    <string name="correctas">Correctas</string>
+    <string name="intentos">Intentos</string>
+    <string name="ingresarTiempo">Ingresar el tiempo de la palabra en pantalla</string>
+    <string name="salir">Salir</string>
+</resources>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aprendiz.ragp.strooperm.R;
 
@@ -35,9 +36,9 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
         aciertos=0;
         intentos=0;
         segundos[0]=0;
-        segundos[0]=30;
+        segundos[1]=30;
 
-        txttiempo.setText("Tiempo: "+segundos[0]);
+
 
         inizialite();
         listTODO();
@@ -45,6 +46,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
         inputData();
 
         go_game();
+        txttiempo.setText("Tiempo: "+segundos[1]);
     }
     //Método para iniciar el timepo del juego
     private void go_game() {
@@ -69,6 +71,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                                 intentos++;
                                 inputData();
                                 randomA();
+
                                 segundos[0]=0;
                             }
 

@@ -23,7 +23,7 @@ public class Configuracion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
-        juegoc = getSharedPreferences("juegoc",MODE_PRIVATE);
+        juegoc = getSharedPreferences("juegoC",MODE_PRIVATE);
         inizialite();
         inputData();
 

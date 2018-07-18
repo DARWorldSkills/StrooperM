@@ -170,7 +170,7 @@ public class JuegoC extends AppCompatActivity implements View.OnClickListener{
             segundos[1]=0;
         }
 
-        txttiempo.setText("Tiempo"+segundos[0]);
+        txttiempo.setText("Tiempo: "+segundos[0]);
     }
 
 

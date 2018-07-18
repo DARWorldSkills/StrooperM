@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout4"
-        android:layout_width="286dp"
+        android:layout_width="298dp"
         android:layout_height="188dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
@@ -50,7 +50,7 @@
 
         <EditText
             android:id="@+id/txtTiempoC"
-            android:layout_width="wrap_content"
+            android:layout_width="269dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -86,7 +86,7 @@
             android:id="@+id/imageView8"
             android:layout_width="65dp"
             android:layout_height="62dp"
-            app:srcCompat="@drawable/casa"
+            app:srcCompat="@drawable/inicio"
             tools:layout_editor_absoluteX="88dp"
             tools:layout_editor_absoluteY="466dp" />
 
@@ -97,7 +97,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="104dp"
-            android:text="Home"
+            android:text="Jugar"
             android:textAlignment="center"
             android:textColor="@color/letra"
             android:textSize="20dp" />

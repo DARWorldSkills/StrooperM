@@ -37,6 +37,8 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
         segundos[0]=0;
         segundos[0]=30;
 
+        txttiempo.setText("Tiempo: "+segundos[0]);
+
         inizialite();
         listTODO();
         randomA();

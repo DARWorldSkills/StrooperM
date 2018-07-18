@@ -26,32 +26,7 @@ public class Configuracion extends AppCompatActivity {
         inizialite();
         inputData();
 
-        salir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String tmp = txttiempo.getText().toString();
-                SharedPreferences.Editor editor = juegoc.edit();
-                if (tmp.length()>0){
-                    try {
-                        editor.putInt("tiempo", Integer.parseInt(tmp));
-                    }catch (Exception e){
-                        Toast.makeText(Configuracion.this, "Por favor ingrese solo número", Toast.LENGTH_SHORT).show();
-                    }
 
-                }else {
-                    Toast.makeText(Configuracion.this, "No se guardará el tiempo de la palabra." +
-                            " \n Por favor que este sea menor a 11 y mayor a 1", Toast.LENGTH_SHORT).show();
-                }
-
-                if (rbtnTiempo.isChecked()){
-                    editor.putInt("modo",1);
-                }
-
-                if (rbtnTiempo.isChecked()){
-                    editor.putInt("tiempo",1);
-                }
-            }
-        });
     }
 
     //Método para cargar los valores preferenciales
@@ -76,10 +51,35 @@ public class Configuracion extends AppCompatActivity {
     private void inizialite() {
         rbtnIntentos = findViewById(R.id.rbtnIntentos);
         rbtnTiempo = findViewById(R.id.rbtnTiempo);
-        salir= findViewById(R.id.btnSalirC);
         txttiempo= findViewById(R.id.txtTiempoC);
 
     }
 
 
+    public void confi(View view) {
+
+        String tmp = txttiempo.getText().toString();
+        SharedPreferences.Editor editor = juegoc.edit();
+        if (tmp.length()>0){
+            try {
+                editor.putInt("tiempo", Integer.parseInt(tmp));
+            }catch (Exception e){
+                Toast.makeText(Configuracion.this, "Por favor ingrese solo número", Toast.LENGTH_SHORT).show();
+            }
+
+        }else {
+            Toast.makeText(Configuracion.this, "No se guardará el tiempo de la palabra." +
+                    " \n Por favor que este sea menor a 11 y mayor a 1", Toast.LENGTH_SHORT).show();
+        }
+
+        if (rbtnTiempo.isChecked()){
+            editor.putInt("modo",1);
+        }
+
+        if (rbtnTiempo.isChecked()){
+            editor.putInt("tiempo",1);
+        }
+    }
 }
+
+

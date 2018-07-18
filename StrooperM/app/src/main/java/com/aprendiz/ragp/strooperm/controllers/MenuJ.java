@@ -43,7 +43,7 @@ public class MenuJ extends AppCompatActivity  {
     public void c(View view) {
 
 
-        Intent intent = new Intent(MenuJ.this, Configuration.class);
+        Intent intent = new Intent(MenuJ.this, Configuracion.class);
         startActivity(intent);
         guardar=0;
     }

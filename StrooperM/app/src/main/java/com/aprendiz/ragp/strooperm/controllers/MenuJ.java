@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.aprendiz.ragp.strooperm.R;
 
-public class MenuJ extends AppCompatActivity implements View.OnClickListener {
+public class MenuJ extends AppCompatActivity  {
     //Declaración de vistas de la actividad MenuJ
     Button btnJugar, btnPuntuacion, btnConfiguracion;
     public static int guardar=0;
@@ -17,41 +17,35 @@ public class MenuJ extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_j);
-        inizialite();
+
     }
 
-    //Inicialización de las vistas de la actividad MenuJ
-    private void inizialite() {
-        btnJugar = findViewById(R.id.btnJugar);
-        btnPuntuacion = findViewById(R.id.btnPuntuacion);
-        btnConfiguracion = findViewById(R.id.btnConfiguracion);
+    //
 
-        //Ingreso de evento onClick a los botones anteriormente inicializados
-        btnJugar.setOnClickListener(this);
-        btnPuntuacion.setOnClickListener(this);
-        btnConfiguracion.setOnClickListener(this);
+
+
+
+    public void a(View view) {
+
+        Intent  intent = new Intent(MenuJ.this, Juego.class);
+        guardar=1;
+        startActivity(intent);
+
     }
 
-    //Evento onClick para los botones de la actividad MenuJ
-    @Override
-    public void onClick(View v) {
-        Intent intent;
-        switch (v.getId()){
-            case R.id.btnJugar:
-                intent = new Intent(MenuJ.this, Juego.class);
-                guardar=1;
-                startActivity(intent);
-                break;
+    public void b(View view) {
+        Intent intent = new Intent(MenuJ.this, Puntuacion.class);
+        guardar=0;
+        startActivity(intent);
 
-            case R.id.btnPuntuacion:
-                intent = new Intent(MenuJ.this, Puntuacion.class);
-                guardar=1;
-                break;
+    }
 
-            case R.id.btnConfiguracion:
-                intent = new Intent(MenuJ.this, Configuration.class);
-                guardar=1;
-                break;
-        }
+    public void c(View view) {
+
+
+        Intent intent = new Intent(MenuJ.this, Configuration.class);
+        startActivity(intent);
+        guardar=0;
     }
 }
+

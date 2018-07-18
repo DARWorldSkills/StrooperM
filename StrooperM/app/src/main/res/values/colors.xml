@@ -7,4 +7,13 @@
     <color name="colorAzulJ">#0000FF</color>
     <color name="colorRojoJ">#FF0000</color>
     <color name="colorVerdeJ">#00FF00</color>
+
+
+
+
+    <color name="fondo">#C0CCDD</color>
+    <color name="contenedor">#A3B7CE</color>
+    <color name="letra">#326ED8</color>
+
+
 </resources>

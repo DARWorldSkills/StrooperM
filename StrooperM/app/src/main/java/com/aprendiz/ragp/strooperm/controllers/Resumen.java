@@ -1,7 +1,10 @@
 package com.aprendiz.ragp.strooperm.controllers;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,12 +14,38 @@ import com.aprendiz.ragp.strooperm.models.Score;
 
 public class Resumen extends AppCompatActivity {
     TextView txtCorrectas, txtIncorrectas, txtAciertos;
+    ImageButton btnTwi, btnFace;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen);
         inizialite();
         inputData();
+
+
+        //Compartit en Twitter
+
+        btnTwi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "hola");
+                intent.setPackage("com.twitter.android");
+
+                try {
+                    startActivity(intent);
+
+                }catch (Exception e){
+                    Toast.makeText(Resumen.this, "No cuentas con esta App, por favor instale la app", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+
+                }
+
+
+            }
+        });
+
     }
 
 
@@ -24,6 +53,8 @@ public class Resumen extends AppCompatActivity {
         txtCorrectas = findViewById(R.id.txtCorrectasR);
         txtIncorrectas = findViewById(R.id.txtIncorrectasR);
         txtAciertos = findViewById(R.id.txtAciertosR);
+        btnTwi = findViewById(R.id.btnTwi);
+        btnFace = findViewById(R.id.btnFace);
     }
 
 
@@ -52,4 +83,10 @@ public class Resumen extends AppCompatActivity {
         gestorDB.inputData(score);
 
     }
+
+
+    public void salir(View view) {
+        finish();
+    }
+
 }
